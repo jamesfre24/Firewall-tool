@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<h1>
+    SAS Firewall Audit Tool
+</h1>
+
+<hr/>
+
+<div>
+    <table border = "1" cellpadding = "5" cellspacing = "5">
+        <thead>
+            <td>Device</td>
+            <td>ACL</td>
+            <td>SEQ</td>
+            <td>Action</td>
+            <td>Protocol</td>
+            <td>Src IP</td>
+            <td>Src Port</td>
+            <td>Dest IP</td>
+            <td>Dest Port</td>
+            <td>Hits</td>
+            <td>First Seen</td>
+            <td>Last Hit</td>
+            <td>Ticket</td>
+            <td>Remark</td>
+            <td>User ID</td>
+            <td>Last Audit</td>
+            <td>Audit Reason</td>
+        </thead>
+    
+        {% for i in object_list %}
+    
+        <tr>
+            <td>{{i.firewall_name}}</td>
+            <td>ACL?</td>
+            <td>{{i.seq}}</td>
+            <td>{{i.permit}}</td>
+            <td>{{i.proto}}</td>
+            <td>{{i.src_ip}}</td>
+            <td>{{i.src_port}}</td>
+            <td>{{i.dst_ip}}</td>
+            <td>{{i.dst_port}}</td>
+            <td>{{i.hits}}</td>
+            <td>{{i.created_at}}</td>
+            <td>{{i.last_hit_at}}</td>
+            <td>    </td>
+            <td>    </td>
+            <td>    </td>
+            <td> never </td>
+            <td>    </td>
+        </tr>    
+    
+        {% endfor %}
+    </div>
+    </html>
